@@ -29,7 +29,7 @@ export class AuthorsComponent implements OnInit {
     console.log('<div> was clicked');
   }
 
-  onKeyUp() {
+  onKeyUp(value) {
     // traditional way:
     // in .html file: 
     // <input (keyup)="onKeyUp($event)"/>
@@ -39,6 +39,8 @@ export class AuthorsComponent implements OnInit {
 
     // angular way
     console.log('ENTER was pressed');
+    console.log(value);
+    
   }
 
 }
