@@ -3,4 +3,7 @@
   <li *ngFor="let author of authors">{{ author }}</li>
 </ul>
 
-<button class="btn btn-default text-uppercase">sample button</button>
+<span>dangerButton (?) => {{ isDanger }}</span>
+<button class="btn btn-default text-uppercase" [class.btn-danger]="isDanger">
+  sample button
+</button>
