@@ -10,7 +10,7 @@ export class AuthorsComponent implements OnInit {
   title = 'List of authors';
   length;
   authors;
-  isDanger = true;
+  isDanger = false;
 
   constructor(authorsService: AuthorsService) {
     this.authors = authorsService.getAuthors();
