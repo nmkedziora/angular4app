@@ -19,4 +19,15 @@ export class AuthorsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSave($event) {
+    $event.stopPropagation();
+    console.log('Save changes - button was clicked');
+    console.log($event);
+  }
+
+  onDivClicked() {
+    console.log('<div> was clicked');
+    
+  }
+
 }

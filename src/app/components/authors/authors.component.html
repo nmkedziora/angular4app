@@ -8,6 +8,13 @@
   sample button
 </button>
 
-<button class="btn" [style.backgroundColor]="isDanger ? 'red' : 'grey'">
-  style binding
-</button>
+<div (click)="onDivClicked()">
+    <button
+    class="btn"
+    [style.backgroundColor]="isDanger ? 'red' : 'grey'"
+    (click)="onSave($event)"
+  >
+    style binding SAVE
+  </button>
+</div>
+
