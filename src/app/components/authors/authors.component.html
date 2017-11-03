@@ -18,5 +18,6 @@
   </button>
 </div>
 
-<input (keyup.enter)="onKeyUp(input.value)" #input/>
+<input (keyup.enter)="onKeyUp(input.value)" #input />
+<input (keyup.enter)="onEmailKeyUp()" [(ngModel)]="email"/>
 

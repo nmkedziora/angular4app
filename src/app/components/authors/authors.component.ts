@@ -11,6 +11,7 @@ export class AuthorsComponent implements OnInit {
   length;
   authors;
   isDanger = false;
+  email = 'me@example.com';
 
   constructor(authorsService: AuthorsService) {
     this.authors = authorsService.getAuthors();
@@ -40,6 +41,10 @@ export class AuthorsComponent implements OnInit {
     // angular way
     console.log('ENTER was pressed');
     console.log(value);
+  }
+
+  onEmailKeyUp() {
+    console.log(this.email);
     
   }
 
