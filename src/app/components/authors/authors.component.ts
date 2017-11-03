@@ -27,7 +27,18 @@ export class AuthorsComponent implements OnInit {
 
   onDivClicked() {
     console.log('<div> was clicked');
-    
+  }
+
+  onKeyUp() {
+    // traditional way:
+    // in .html file: 
+    // <input (keyup)="onKeyUp($event)"/>
+    // if($event.keyCode === 13) {
+    //   console.log('ENTER was pressed');
+    // }
+
+    // angular way
+    console.log('ENTER was pressed');
   }
 
 }
