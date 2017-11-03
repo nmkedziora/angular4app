@@ -12,6 +12,13 @@ export class AuthorsComponent implements OnInit {
   authors;
   isDanger = false;
   email = 'me@example.com';
+  course = {
+    title: 'title tile title',
+    rating: 4.6785,
+    students: 3454,
+    price: 130.56,
+    releaseDate: new Date(2016, 4, 6)
+  }
 
   constructor(authorsService: AuthorsService) {
     this.authors = authorsService.getAuthors();

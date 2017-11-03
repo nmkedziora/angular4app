@@ -21,3 +21,12 @@
 <input (keyup.enter)="onKeyUp(input.value)" #input />
 <input (keyup.enter)="onEmailKeyUp()" [(ngModel)]="email"/>
 
+<h3>Course object</h3>
+<ul>
+  <li>title: {{ course.title | uppercase }}</li>
+  <li>rating: {{ course.rating | number:'1.2-2' }}</li>
+  <li>students: {{ course.students | number }}</li>
+  <li>price: {{ course.price | currency:'EUR':true:'3.2-2' }}</li>
+  <li>release date: {{ course.releaseDate | date:'shortDate' }}</li>
+</ul>
+
