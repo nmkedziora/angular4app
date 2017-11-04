@@ -6,15 +6,17 @@ import { AppComponent } from './app.component';
 import { AuthorsComponent } from './components/authors/authors.component';
 import { CourseComponent } from './components/course/course.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { InputFavoriteComponent } from './components/input-favorite/input-favorite.component';
+import { BootstrapPanelComponent } from './components/bootstrap-panel/bootstrap-panel.component';
+import { TweetLikeComponent } from './components/tweet-like/tweet-like.component';
 
 import { CoursesService } from './services/courses.service';
 import { AuthorsService } from './services/authors.service';
 
 import { SummaryPipe } from './pipes/summary.pipe';
 import { TitleCasePipe } from './pipes/title-case.pipe';
-import { InputFavoriteComponent } from './components/input-favorite/input-favorite.component';
-import { BootstrapPanelComponent } from './components/bootstrap-panel/bootstrap-panel.component';
-import { TweetLikeComponent } from './components/tweet-like/tweet-like.component';
+
+import { InputFormatDirective } from './directives/input-format.directive';
 
 
 @NgModule({
@@ -23,11 +25,12 @@ import { TweetLikeComponent } from './components/tweet-like/tweet-like.component
     AuthorsComponent,
     CourseComponent,
     FavoriteComponent,
-    SummaryPipe,
-    TitleCasePipe,
     InputFavoriteComponent,
     BootstrapPanelComponent,
-    TweetLikeComponent
+    TweetLikeComponent,
+    SummaryPipe,
+    TitleCasePipe,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
