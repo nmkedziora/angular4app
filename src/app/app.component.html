@@ -1,4 +1,24 @@
 <div>
+  <h5>[ngSwitch]</h5>
+  <ul class="nav nav-pills">
+    <li [class.active]="viewMode === 'map'"><a (click)="viewMode = 'map'">MAP VIEW</a></li>
+    <li [class.active]="viewMode === 'list'"><a (click)="viewMode = 'list'">LIST VIEW</a></li>
+  </ul>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map view content</div>
+    <div *ngSwitchCase="'list'">List view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+  </div>
+</div>
+<hr/>
+
+<div>
+  <h5>[hidden]</h5>
+  <div [hidden]="courses.length">no courses</div>
+</div>
+<hr/>
+
+<div>
   <h5>*ngIf</h5>
   <div *ngIf="courses.length; then coursesList else noCourses"></div>
 
@@ -6,6 +26,7 @@
   <ng-template #noCourses>No courses yet</ng-template>
 </div>
 <hr/>
+
 <tweet-like
   [is-active]="tweet.isLiked"
   [likes-count]="tweet.likesCount"
