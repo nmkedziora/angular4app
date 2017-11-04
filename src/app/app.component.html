@@ -1,3 +1,11 @@
+<div>
+  <h5>*ngIf</h5>
+  <div *ngIf="courses.length; then coursesList else noCourses"></div>
+
+  <ng-template #coursesList>List of Courses</ng-template>
+  <ng-template #noCourses>No courses yet</ng-template>
+</div>
+<hr/>
 <tweet-like
   [is-active]="tweet.isLiked"
   [likes-count]="tweet.likesCount"
