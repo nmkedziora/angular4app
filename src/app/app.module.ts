@@ -13,6 +13,7 @@ import { AuthorsService } from './services/authors.service';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { TitleCasePipe } from './pipes/title-case.pipe';
 import { InputFavoriteComponent } from './components/input-favorite/input-favorite.component';
+import { BootstrapPanelComponent } from './components/bootstrap-panel/bootstrap-panel.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { InputFavoriteComponent } from './components/input-favorite/input-favori
     FavoriteComponent,
     SummaryPipe,
     TitleCasePipe,
-    InputFavoriteComponent
+    InputFavoriteComponent,
+    BootstrapPanelComponent
   ],
   imports: [
     BrowserModule,
