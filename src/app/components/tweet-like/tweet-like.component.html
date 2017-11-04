@@ -1,0 +1,10 @@
+<div>
+  <p>{{ body }}</p>
+  <span
+    class="glyphicon glyphicon-heart"
+    [class.active]="isActive"
+    (click)="onClick()"
+    aria-hidden="true">
+  </span>
+  <span>{{ likesCount }}</span>
+</div>

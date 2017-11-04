@@ -1,3 +1,10 @@
+<tweet-like
+  [is-active]="tweet.isLiked"
+  [likes-count]="tweet.likesCount"
+  [body]="tweet.body"
+>
+</tweet-like>
+
 <bootstrap-panel>
   <ng-container class="heading">
     <h3>heading with ng-content</h3>
@@ -7,7 +14,11 @@
     <p>body content with ng-content...</p>
   </div>
 </bootstrap-panel>
-<input-favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></input-favorite>
+<input-favorite
+  [is-favorite]="post.isFavorite"
+  (change)="onFavoriteChange($event)"
+>
+</input-favorite>
 <input type="text" [(ngModel)]="title"/>
 <br/>
 {{ title | titleCase }}

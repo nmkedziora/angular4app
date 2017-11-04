@@ -14,6 +14,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
 import { TitleCasePipe } from './pipes/title-case.pipe';
 import { InputFavoriteComponent } from './components/input-favorite/input-favorite.component';
 import { BootstrapPanelComponent } from './components/bootstrap-panel/bootstrap-panel.component';
+import { TweetLikeComponent } from './components/tweet-like/tweet-like.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { BootstrapPanelComponent } from './components/bootstrap-panel/bootstrap-
     SummaryPipe,
     TitleCasePipe,
     InputFavoriteComponent,
-    BootstrapPanelComponent
+    BootstrapPanelComponent,
+    TweetLikeComponent
   ],
   imports: [
     BrowserModule,
