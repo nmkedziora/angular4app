@@ -18,6 +18,7 @@ import { TitleCasePipe } from './pipes/title-case.pipe';
 
 import { InputFormatDirective } from './directives/input-format.directive';
 import { ZippyComponent } from './components/zippy/zippy.component';
+import { FormComponent } from './components/form/form.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ZippyComponent } from './components/zippy/zippy.component';
     SummaryPipe,
     TitleCasePipe,
     InputFormatDirective,
-    ZippyComponent
+    ZippyComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
