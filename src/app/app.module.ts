@@ -17,6 +17,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
 import { TitleCasePipe } from './pipes/title-case.pipe';
 
 import { InputFormatDirective } from './directives/input-format.directive';
+import { ZippyComponent } from './components/zippy/zippy.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { InputFormatDirective } from './directives/input-format.directive';
     TweetLikeComponent,
     SummaryPipe,
     TitleCasePipe,
-    InputFormatDirective
+    InputFormatDirective,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
