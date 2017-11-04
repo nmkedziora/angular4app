@@ -12,6 +12,7 @@ import { AuthorsService } from './services/authors.service';
 
 import { SummaryPipe } from './pipes/summary.pipe';
 import { TitleCasePipe } from './pipes/title-case.pipe';
+import { InputFavoriteComponent } from './components/input-favorite/input-favorite.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TitleCasePipe } from './pipes/title-case.pipe';
     CourseComponent,
     FavoriteComponent,
     SummaryPipe,
-    TitleCasePipe
+    TitleCasePipe,
+    InputFavoriteComponent
   ],
   imports: [
     BrowserModule,

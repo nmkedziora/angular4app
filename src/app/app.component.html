@@ -1,3 +1,4 @@
+<input-favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></input-favorite>
 <input type="text" [(ngModel)]="title"/>
 <br/>
 {{ title | titleCase }}
