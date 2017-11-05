@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
+import { AppError } from '../../../common/app-error';
+import { NotFoundError } from '../../../common/not-found-error';
 
 @Component({
   selector: 'app-posts',
@@ -32,8 +34,12 @@ export class PostsComponent implements OnInit {
           post['id'] = response.json().id;
           this.posts.unshift(post);
         },
-        error => {
-          console.log('createPost error');
+        (error: Response) => {
+          if(error.status === 400) {
+            console.log('Bad request');
+          } else {
+            console.log('createPost error');
+          }
       })
   }
 
@@ -49,14 +55,16 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post) {
-    this.service.deletePost(post.id)
+    this.service.deletePost(345)
       .subscribe(
         response => {
           let index = this.posts.indexOf(post);
           this.posts.splice(index, 1);
         },
-        (error: Response) => {
-          if(error.status === 404) {
+        (error: AppError) => {
+          console.log(error instanceof NotFoundError);
+          
+          if(error instanceof NotFoundError) {
             console.log('This post has already been deleted');
           } else {
             console.log('deletePost error');
