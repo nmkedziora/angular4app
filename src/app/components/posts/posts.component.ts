@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http'
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-posts',
@@ -8,42 +8,55 @@ import { Http } from '@angular/http'
 })
 export class PostsComponent implements OnInit {
   posts: any[];
-  private url: string = 'http://jsonplaceholder.typicode.com/posts'
 
-  constructor(private http: Http) {}
+  constructor(private service: PostService) {}
 
   ngOnInit() {
-    this.http.get(this.url)
-    .subscribe(response => {
-      this.posts = response.json();
-    })
+    this.service.getPosts()
+    .subscribe(
+      response => {
+        this.posts = response.json();
+      },
+      error => {
+        console.log('getPost error');
+      })
   }
 
   createPost(input: HTMLInputElement) {
     let post = { title: input.value };
     input.value = '';
 
-    this.http.post(this.url, JSON.stringify(post))
-      .subscribe(response => {
-        post['id'] = response.json().id;
-        this.posts.unshift(post);
+    this.service.createPost(post)
+      .subscribe(
+        response => {
+          post['id'] = response.json().id;
+          this.posts.unshift(post);
+        },
+        error => {
+          console.log('createPost error');
       })
   }
 
   updatePost(post) {
-    this.http.patch(
-      `${this.url}/${post.id}`,
-      JSON.stringify({ isRed: true })
-    ).subscribe(response => {
-      console.log(response.json());
-    })
+    this.service.patchPost(post.id, { isRed: true })
+      .subscribe(
+        response => {
+          console.log(response.json());
+        },
+        error => {
+          console.log('updatePost error');
+      })
   }
 
   deletePost(post) {
-    this.http.delete(`${this.url}/${post.id}`)
-      .subscribe(response => {
-        let index = this.posts.indexOf(post);
-        this.posts.splice(index, 1);
+    this.service.deletePost(post.id)
+      .subscribe(
+        response => {
+          let index = this.posts.indexOf(post);
+          this.posts.splice(index, 1);
+        },
+        error => {
+          console.log('deletePost error');
       })
   }
 }
