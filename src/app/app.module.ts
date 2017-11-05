@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './components/authors/authors.component';
@@ -19,6 +20,7 @@ import { TitleCasePipe } from './pipes/title-case.pipe';
 import { InputFormatDirective } from './directives/input-format.directive';
 import { ZippyComponent } from './components/zippy/zippy.component';
 import { FormComponent } from './components/form/form.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 
 @NgModule({
@@ -34,11 +36,13 @@ import { FormComponent } from './components/form/form.component';
     TitleCasePipe,
     InputFormatDirective,
     ZippyComponent,
-    FormComponent
+    FormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService,
